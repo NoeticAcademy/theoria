@@ -1,0 +1,35 @@
+name: tests
+on:
+  push:
+    branches: 
+      - master 
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install uv
+      run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      
+    - name: Sync dependencies
+      run: uv sync --all-extras
+      
+    - name: Ruff linting
+      uses: astral-sh/ruff-action@v3.1.0
+      with:
+        args: check --fix --output-format=github
+        
+    - name: Execute notebooks (Papermill)
+      run: |
+        mkdir -p .executed_notebooks
+        find notebooks -name "*.ipynb" | while read notebook; do
+        echo "Executing: $notebook"
+        uv run papermill "$notebook" \
+            ".executed_notebooks/$(basename "$notebook")" \
+            --kernel python3 \
+            --progress-bar
+        done

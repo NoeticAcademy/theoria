@@ -32,6 +32,7 @@ dependencies = [
 [project.optional-dependencies]
 cs = [
     "networkx>=3.3",
+    "numba>=0.62.1",
 ]
 math = [
     "sympy>=1.13",
@@ -71,7 +72,7 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "B", "Q", "I", "N", "S", "T20"]
-ignore = ["E501"]
+ignore = ["E501", "N803", "N806"]
 
 [tool.mypy]
 python_version = "3.12"

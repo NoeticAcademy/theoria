@@ -1,6 +1,7 @@
 # Theoria
 
-[![tests](https://github.com/KYLChiu/theoria/actions/workflows/theoria.yml/badge.svg)](https://github.com/KYLChiu/theoria/actions/workflows/theoria.yml)
+[![tests](https://github.com/KYLChiu/theoria/actions/workflows/tests.yml/badge.svg)](https://github.com/KYLChiu/theoria/actions/workflows/tests.yml)
+[![commit](https://github.com/KYLChiu/theoria/actions/workflows/commit.yml/badge.svg)](https://github.com/KYLChiu/theoria/actions/workflows/commit.yml)
 
 ## Goal
 

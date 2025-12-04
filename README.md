@@ -55,11 +55,10 @@
 We provide jupyter notebooks to learn:
 
 - **Computer Science**
+- **Software Development**
 - **Statistics**
 - **Mathematics**
 - **Quantitative Finance**
-
-Code is predominantly written in Python.
 
 Notebooks are labeled as follows:
 

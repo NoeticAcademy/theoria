@@ -47,6 +47,7 @@ class Validor:
         for i, case in enumerate(self._cases, 1):
             try:
                 result = self.func(**case.input_data)
+                log.info(f"Test {i} RUNNING: actual {result} vs expected {case.expected_output}")
                 assert comparison(result, case.expected_output), (  # noqa: S101
                     f"Test {i} FAILED: {case.description}\n"
                     f"Input          : {case.input_data}\n"

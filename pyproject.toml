@@ -49,6 +49,7 @@ visualisation = [
     "seaborn>=0.13",
 ]
 dev = [
+    "sortedcontainers>=2.4.0",
     "tqdm>=4.66",
     "ruff>=0.7",
     "pytest>=8.3",
@@ -57,6 +58,9 @@ dev = [
     "nb-mypy>=1.0.6",
     "ipython>=9.6.0",
     "tabulate>=0.9.0",
+    "fastapi>=0.128.0",
+    "pydantic>=2.12.5",
+    "uvicorn>=0.40.0",
 ]
 
 [build-system]

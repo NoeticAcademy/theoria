@@ -27,6 +27,7 @@ dependencies = [
     "importnb>=2023.11.1",
     "jupyterlab>=4.2",
     "papermill>=2.6",
+    "scikit-learn>=1.8.0",
 ]
 
 [project.optional-dependencies]

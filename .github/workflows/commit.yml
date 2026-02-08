@@ -22,26 +22,26 @@ jobs:
     - name: Sync dependencies
       run: uv sync --all-extras
     
-    - name: Execute & overwrite notebooks in-place
-      run: |
-        find notebooks -name "*.ipynb" | while read notebook; do
-          echo "Executing & overwriting: $notebook"
-          uv run papermill "$notebook" "$notebook" \
-            --kernel python3 \
-            --progress-bar 
-        done
+    # - name: Execute & overwrite notebooks in-place
+    #   run: |
+    #     find notebooks -name "*.ipynb" | while read notebook; do
+    #       echo "Executing & overwriting: $notebook"
+    #       uv run papermill "$notebook" "$notebook" \
+    #         --kernel python3 \
+    #         --progress-bar 
+    #     done
     
-    - name: Commit as GitHub Bot
-      run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add notebooks/
-          git commit -m "Repo - Update Notebooks [skip ci]" || exit 0
+    # - name: Commit as GitHub Bot
+    #   run: |
+    #       git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    #       git config --local user.name "github-actions[bot]"
+    #       git add notebooks/
+    #       git commit -m "Repo - Update Notebooks [skip ci]" || exit 0
 
-    - name: Push changes
-      uses: ad-m/github-push-action@v0.8.0
-      with:
-        branch: master
-        github_token: ${{ secrets.PAT_TOKEN }}
-        repository: ${{ github.repository }}
-        force_with_lease: true
+    # - name: Push changes
+    #   uses: ad-m/github-push-action@v0.8.0
+    #   with:
+    #     branch: master
+    #     github_token: ${{ secrets.PAT_TOKEN }}
+    #     repository: ${{ github.repository }}
+    #     force_with_lease: true

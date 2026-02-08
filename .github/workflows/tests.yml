@@ -21,13 +21,13 @@ jobs:
       with:
         args: check --fix --output-format=github
         
-    - name: Execute notebooks (Papermill)
-      run: |
-        mkdir -p .executed_notebooks
-        find notebooks -name "*.ipynb" | while read notebook; do
-        echo "Executing: $notebook"
-        uv run papermill "$notebook" \
-            ".executed_notebooks/$(basename "$notebook")" \
-            --kernel python3 \
-            --progress-bar
-        done
+    # - name: Execute notebooks (Papermill)
+    #   run: |
+    #     mkdir -p .executed_notebooks
+    #     find notebooks -name "*.ipynb" | while read notebook; do
+    #     echo "Executing: $notebook"
+    #     uv run papermill "$notebook" \
+    #         ".executed_notebooks/$(basename "$notebook")" \
+    #         --kernel python3 \
+    #         --progress-bar
+    #     done

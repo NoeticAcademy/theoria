@@ -39,6 +39,7 @@ math = [
 ]
 stats = [
     "statsmodels",
+    "scikit-learn>=1.8.0",
 ]
 finance = [
     "yfinance>=0.2.44",
